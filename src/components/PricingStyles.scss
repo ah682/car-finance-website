@@ -1,0 +1,103 @@
+// Variables specific to pricing styles
+$pricing-width: 100%;
+$pricing-padding: 6rem 1rem;
+$pricing-bg-color: #000;
+
+$card-container-max-width: 1440px;
+$card-container-grid-gap: 40px;
+$card-container-grid-columns: repeat(5, 1fr);
+
+$card-border-color: #eee;
+$card-text-color: #eee;
+$card-text-align: center;
+$card-padding: 1rem;
+$card-hover-bg-color: #141414;
+
+$card-h3-font-size: 1.4rem;
+$card-h3-padding: 1rem;
+
+$bar-border-color: #eee;
+$bar-width: 10%;
+$bar-margin: 1.5rem auto;
+$bar-display: block;
+
+$btc-font-size: 4rem;
+$btc-font-weight: 600;
+$btc-padding: 1rem;
+
+$pricing-p-color: #eee;
+$pricing-p-padding: 1rem 0;
+$pricing-p-font-size: 1.2rem;
+
+$card-btn-display: block;
+$card-btn-width: 80%;
+$card-btn-margin: 2rem auto;
+
+$breakpoint-pricing: 980px;
+$card-container-max-width-mobile: 90%;
+$card-container-grid-columns-mobile: 1fr;
+
+// SCSS Code
+.pricing {
+  width: $pricing-width;
+  padding: $pricing-padding;
+  background-color: $pricing-bg-color;
+
+  p {
+    color: $pricing-p-color;
+    padding: $pricing-p-padding;
+    font-size: $pricing-p-font-size;
+  }
+}
+
+.card-container {
+  max-width: $card-container-max-width;
+  margin: auto;
+  display: grid;
+  grid-gap: $card-container-grid-gap;
+  grid-template-columns: $card-container-grid-columns;
+
+  .card {
+    border: 1px solid $card-border-color;
+    color: $card-text-color;
+    text-align: $card-text-align;
+    padding: $card-padding;
+
+    &:hover {
+      background-color: $card-hover-bg-color;
+    }
+
+    h3 {
+      font-size: $card-h3-font-size;
+      padding: $card-h3-padding;
+    }
+
+    .bar {
+      border-bottom: 1px solid $bar-border-color;
+      width: $bar-width;
+      margin: $bar-margin;
+      display: $bar-display;
+    }
+
+    .btc {
+      font-size: $btc-font-size;
+      font-weight: $btc-font-weight;
+      padding: $btc-padding;
+    }
+
+    .btn {
+      display: $card-btn-display;
+      width: $card-btn-width;
+      margin: $card-btn-margin;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-pricing) {
+  .card-container {
+    max-width: $card-container-max-width-mobile;
+    margin: auto;
+    margin-top: 9rem;
+    grid-template-columns: $card-container-grid-columns-mobile;
+  }
+}

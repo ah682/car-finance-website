@@ -1,0 +1,90 @@
+$full-width: 100%;
+$full-height: 100%;
+$video-position: fixed;
+$video-object-fit: cover;
+$video-z-index: -1;
+
+$hero-height: 100vh;
+$hero-width: 100vw;
+$hero-object-fit: cover;
+
+$content-text-align: center;
+$content-position: absolute;
+$content-margin: auto;
+$content-top: 40vh;
+
+$font-size-h1: 4rem;
+$font-size-h1-mobile: 3rem;
+$font-size-p: 1.8rem;
+$font-size-p-mobile: 1rem;
+$font-weight-p: 200;
+$text-transform-p: uppercase;
+$margin-bottom-p: 1.6rem;
+$text-color: #fff;
+
+$btn-margin: 1rem 0.2rem;
+
+$breakpoint: 640px;
+
+#background-video {
+  position: $video-position;
+  top: 0;
+  left: 0;
+  width: $hero-width;
+  height: $full-height;
+  object-fit: $video-object-fit;
+  z-index: $video-z-index;
+  overflow: hidden;
+  
+}
+
+.hero {
+  height: $hero-height;
+  width: $hero-width;
+  position: relative; // Ensure the hero content is positioned relative to the video background
+  overflow: hidden; // Ensure the content stays within the bounds of the hero section
+
+  .content {
+    text-align: $content-text-align;
+    position: $content-position;
+    margin: $content-margin;
+    width: $full-width;
+    height: $full-height;
+    top: $content-top;
+
+    h1 {
+      font-size: $font-size-h1;
+      color: $text-color;
+    }
+
+    p {
+      font-size: $font-size-p;
+      font-weight: $font-weight-p;
+      text-transform: $text-transform-p;
+      margin-bottom: $margin-bottom-p;
+      color: $text-color;
+    }
+
+    .btn {
+      margin: $btn-margin;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+      h1 {
+        font-size: $font-size-h1-mobile;
+      }
+
+      p {
+        font-size: $font-size-p-mobile;
+        margin-bottom: $margin-bottom-p;
+      }
+    }
+  }
+}
+
+/* Disable horizontal scrolling for desktop only */
+@media screen and (min-width: 1024px) {
+  body {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+  }
+}
